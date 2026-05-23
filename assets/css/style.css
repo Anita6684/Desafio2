@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e5e5e5;
+}
+
+/* ===== LAYOUT PRINCIPAL GRID ===== */
+
+.container{
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar productos"
+        "footer footer";
+
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 70px auto 50px;
+
+    min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+
+.header{
+    grid-area: header;
+    background-color: #0d3b66;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== SIDEBAR ===== */
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: #d9d9d9;
+    padding: 20px;
+
+    /* FLEXBOX */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.categorias{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ===== PRODUCTOS ===== */
+
+.productos{
+    grid-area: productos;
+    padding: 20px;
+
+    /* GRID PRODUCTOS */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ===== TARJETAS ===== */
+
+.card{
+    background-color: white;
+    padding: 15px;
+
+    /* FLEXBOX TARJETAS */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 5px;
+}
+
+.card img{
+    width: 100%;
+    max-width: 180px;
+}
+
+.card h3{
+    text-align: center;
+}
+
+.card button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #0d3b66;
+    color: white;
+    cursor: pointer;
+}
+
+.card button:hover{
+    background-color: #145da0;
+}
+
+/* ===== FOOTER ===== */
+
+.footer{
+    grid-area: footer;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
